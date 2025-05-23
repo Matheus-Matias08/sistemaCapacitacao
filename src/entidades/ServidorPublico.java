@@ -138,8 +138,12 @@ public class ServidorPublico {
         }
 
         public double calcularSalarioHorasExtras(double horasTrabalhadas, double valorHora){
-                double salarioMensal = getSalario() + horasTrabalhadas*valorHora;
+                double salarioMensal = horasTrabalhadas*valorHora;
                 this.horasExtras = salarioMensal;
                 return salarioMensal;
+        }
+        public double calcularSalario(double salario){
+                double novoSalario = salario + getHorasExtras();
+                return novoSalario;
         }
 }
