@@ -1,6 +1,16 @@
 package entidades;
 
 public class ServidorPublico {
+        public ServidorPublico(){}
+        public ServidorPublico(int matricula, String nome){
+                this.matricula = matricula;
+                this.nome = nome;
+        }
+        public ServidorPublico(int matricula, String nome, String cargo){
+                this.matricula = matricula;
+                this.nome = nome;
+                this.cargo = cargo;
+        }
         private int matricula;
         private String nome;
         private String foto;
@@ -16,6 +26,7 @@ public class ServidorPublico {
         private String lotacao;
         private String email;
         private  double horasExtras;
+
 
         public double getHorasExtras(){
                 return horasExtras;
@@ -142,8 +153,26 @@ public class ServidorPublico {
                 this.horasExtras = salarioMensal;
                 return salarioMensal;
         }
+        //(1, 1, 2, 3)
+        public double calcularSalarioHorasExtraass(double valorHora, double... horasTrabalhadas){
+                double horasTotal = 0;
+                double salarioMensal = 0;
+                for(double somaHorasTrabalhadas : horasTrabalhadas){
+                        salarioMensal += somaHorasTrabalhadas*valorHora;
+                }
+                this.horasExtras = salarioMensal;
+                return salarioMensal;
+        }
         public double calcularSalario(double salario){
                 double novoSalario = salario + getHorasExtras();
                 return novoSalario;
+        }
+        public double calcularNumero(double... numeros){
+                double soma = 0;
+                for(double numero : numeros){
+                        soma += numero;
+                }
+                System.out.println(soma);
+                return soma;
         }
 }
