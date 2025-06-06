@@ -4,7 +4,12 @@ public class Produto {
     private String nome;
     private int quantidade;
     private double preco;
-
+    
+    public Produto(String nome, double preco, int qntd){
+        this.nome = nome;
+        this.preco = preco;
+        quantidade = qntd;
+    }
 
     public double getPreco() {
         return preco;
@@ -22,7 +27,6 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
-
     public String getNome() {
         return nome;
     }
@@ -31,25 +35,32 @@ public class Produto {
         this.nome = nome;
     }
 
-    public Produto(String nome, double preco, int qntd){
-        setNome(nome);
-        setPreco(preco);
-        setQuantidade(qntd);
-    }
     public double valorTotalEmEstoque(){
         double total = getPreco()*getQuantidade();
         return total;
     }
+
     public void adicionarProdutos(int quantidade){
         setQuantidade(getQuantidade()+quantidade);
-        mostrarInformacoes();
+       System.out.println("Quantidade atualizada!");
     }
+    
     public void removerProdutos(int quantidade){
         setQuantidade(getQuantidade()-quantidade);
-        mostrarInformacoes();
+        System.out.println("Quantidade atualizada!");
     }
-    public void mostrarInformacoes() {
-        System.out.printf("Dados atualizados: " + getNome() + ",R$ " + getPreco() + ", " + getQuantidade() + ", R$ %.2f", valorTotalEmEstoque());
-        System.out.println();
+    // public void mostrarInformacoes() {
+    //     System.out.printf("Dados atualizados: " + getNome() + ", R$ " + getPreco() + ", " + getQuantidade() + ", R$ %.2f", valorTotalEmEstoque());
+    //     System.out.println();
+    // }
+    public String toString(){
+        return "Nome: "
+            +getNome()
+            + ", R$"
+            + String.format("%.2f", getPreco())
+            + ", "
+            + getQuantidade()
+            +" unidades, total: R$"
+            + String.format("%.2f", valorTotalEmEstoque());
     }
 }

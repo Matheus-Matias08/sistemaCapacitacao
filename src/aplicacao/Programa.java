@@ -1,8 +1,6 @@
 package aplicacao;
-import java.util.Scanner;
-
 import entidades.Produto;
-import entidades.ServidorPublico;
+import java.util.Scanner;
 
 public class Programa {
     public static void main(String[] args) {
@@ -37,7 +35,7 @@ public class Programa {
         System.out.println("Digite a quantidade disponível do produto");
         qntd = sc.nextInt();
         Produto produto = new Produto(nome, preco, qntd);
-        produto.mostrarInformacoes();
+        produto.toString();
         System.out.println("Digite a quantidade de produtos que serão adicionaos ao estoque: ");
         qntd = sc.nextInt();
         produto.adicionarProdutos(qntd);
@@ -45,5 +43,6 @@ public class Programa {
         qntd = sc.nextInt();
         produto.removerProdutos(qntd);
 
+        System.out.println("Relatório final: " + produto);
     }
 }
