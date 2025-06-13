@@ -153,7 +153,6 @@ public class ServidorPublico {
                 this.horasExtras = salarioMensal;
                 return salarioMensal;
         }
-        //(1, 1, 2, 3)
         public double calcularSalarioHorasExtraass(double valorHora, double... horasTrabalhadas){
                 double horasTotal = 0;
                 double salarioMensal = 0;

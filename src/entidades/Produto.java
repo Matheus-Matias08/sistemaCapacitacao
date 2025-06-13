@@ -53,6 +53,7 @@ public class Produto {
     //     System.out.printf("Dados atualizados: " + getNome() + ", R$ " + getPreco() + ", " + getQuantidade() + ", R$ %.2f", valorTotalEmEstoque());
     //     System.out.println();
     // }
+    @Override
     public String toString(){
         return "Nome: "
             +getNome()
