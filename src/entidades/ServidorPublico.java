@@ -207,12 +207,12 @@ public class ServidorPublico {
         @Override
         public String toString() {
                 return "ServidorPublico{" +
-                        "matricula=" + matricula +
-                        ", nome='" + nome + '\'' +
-                        ", orgao='" + orgao + '\'' +
-                        ", salario=" + salario +
-                        ", cargo='" + cargo + '\'' +
-                        ", lotacao='" + lotacao + '\'' +
+                        "Matrícula: " + matricula +
+                        ", Nome: " + nome  +
+                        ", Órgao: " + orgao +
+                        ", Salário: " + salario +
+                        ", Cargo: " + cargo +
+                        ", Lotação: " + lotacao +
                         '}';
         }
 }
