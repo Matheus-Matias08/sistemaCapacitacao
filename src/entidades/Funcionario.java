@@ -5,7 +5,6 @@ public class Funcionario {
     private double salarioBruto;
     private double taxa;
 
-    
     public String getNome() {
         return nome;
     }
@@ -34,6 +33,14 @@ public class Funcionario {
         return salarioLiquido;
     }
     public void aumentarSalario(double porcentagem){
-        System.out.printf("Dados atualizados: R$ %.2f",calcularSalarioLiquido() + (getSalarioBruto()*(porcentagem/100)));
+        setSalarioBruto(getSalarioBruto() + (getSalarioBruto() * (porcentagem/100)));
+    } 
+    public String toString(){
+        return "Funcionário: "
+            + getNome()
+            + String.format(", R$ %.2f.", calcularSalarioLiquido());
+    }
+    public static void felizAniversario(Funcionario func){
+        System.out.println("Feliz aniversário "+func);
     }
 }

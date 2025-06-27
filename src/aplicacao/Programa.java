@@ -1,6 +1,13 @@
 package aplicacao;
 
 import entidades.Funcionario;
+import entidades.ServidorPublico;
+
+import java.util.ArrayList;
+import entidades.Curso;
+
+import javax.swing.*;
+import java.util.List;
 import java.util.Scanner;
 
 public class Programa {
@@ -46,19 +53,47 @@ public class Programa {
 
         // System.out.println("Relatório final: " + produto);
 
-        Funcionario funcionario = new Funcionario();
+//        Funcionario funcionario = new Funcionario();
+//
+//        System.out.print("Nome: ");
+//        funcionario.setNome(sc.nextLine());
+//        System.out.print("Salário bruto: ");
+//        funcionario.setSalarioBruto(sc.nextDouble());
+//        System.out.print("Taxa: ");
+//        funcionario.setTaxa(sc.nextDouble());
+//
+//        System.out.println(funcionario);
+//
+//        System.out.println();
+//        System.out.print("Porcentagem de aumento: ");
+//        funcionario.aumentarSalario(sc.nextDouble());
+//        System.out.println(funcionario);
+        adicionarServidorPublic();
 
-        System.out.print("Nome: ");
-        funcionario.setNome(sc.nextLine());
-        System.out.print("Salário bruto: ");
-        funcionario.setSalarioBruto(sc.nextDouble());
-        System.out.print("Taxa: ");
-        funcionario.setTaxa(sc.nextDouble());
+    }
+    static List<ServidorPublico> servidores = new ArrayList<>();
+    static List<Curso> cursos = new ArrayList<>();
+    public static void adicionarServidorPublic(){
+        int matricula = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe a matrícula"));
+        String nome = JOptionPane.showInputDialog(null, "Informe o nome do servidor");
+        String orgao = JOptionPane.showInputDialog(null, "informe o órgão do servidor");
+        String cargo = JOptionPane.showInputDialog(null, "informe o cargo do servidor");
+        String lotacao = JOptionPane.showInputDialog(null, "informe a lotação do servidor");
+        String email = JOptionPane.showInputDialog(null, "informe o email do servidor");
+        double salario = Double.parseDouble(JOptionPane.showInputDialog(null, "informe o salário do servidor"));
 
-        System.out.printf("Funcionário: "+funcionario.getNome() +", R$ %.2f", funcionario.calcularSalarioLiquido());
+        ServidorPublico servido = new ServidorPublico(matricula, nome, orgao, salario, cargo, lotacao, email);
+    }
+    public static void listarServidoresPublicos(){
 
-        System.out.println();
-        System.out.print("Porcentagem de aumento: ");
-        funcionario.aumentarSalario(sc.nextDouble());
+    }
+    public static void  mostrarServidorPublic(int matricula){
+
+    }
+    public static void alterarServidorPublico(ServidorPublico servidor){
+
+    }
+    public static void excluirServidorPublico(int matricula){
+
     }
 }
